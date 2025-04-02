@@ -1,0 +1,13 @@
+
+# Exported from Render on 2025-04-02T12:15:07Z
+services:
+- type: web
+  name: dsmeta-backend
+  runtime: docker
+  repo: https://github.com/Carlos-Borges71/dsmeta
+  plan: free
+  region: oregon
+  dockerContext: .
+  dockerfilePath: Dockerfile
+  rootDir: 'dsmeta-backend '
+version: "1"
