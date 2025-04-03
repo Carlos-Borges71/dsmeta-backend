@@ -1,8 +1,3 @@
-envVars:
-  - key: JAVA_HOME
-    value: /opt/render/project/.render/java
-  - key: PATH
-    value: $JAVA_HOME/bin:$PATH
 # Exported from Render on 2025-04-02T12:15:07Z
 services:
 - type: web
