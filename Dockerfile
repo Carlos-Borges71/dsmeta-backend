@@ -1,12 +1,15 @@
 FROM eclipse-temurin:17-jdk AS builder
 
-# exemplo de script de build no Render
-sudo apt-get update
-sudo apt-get install -y openjdk-17-jdk
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-export PATH=$JAVA_HOME/bin:$PATH
+# Usa a imagem oficial OpenJDK 17 (versão leve)
+FROM openjdk:17-jdk-slim
 
-./gradlew build
+# Define a variável de ambiente JAVA_HOME
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV PATH="$JAVA_HOME/bin:$PATH"
+
+
+# Comando para rodar a aplicação Spring Boot
+CMD ["java", "-jar", "app.jar"]
 
 WORKDIR /app
 
