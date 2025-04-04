@@ -5,6 +5,7 @@ WORKDIR /app
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 COPY src ./src
+COPY target/desmeta-0.0.1-SNAPSHOP.jar app.jar
 
 RUN chmod +x mvnw && ./mvnw clean package -DskipTests
 
