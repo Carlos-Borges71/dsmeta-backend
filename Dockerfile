@@ -1,7 +1,12 @@
 FROM eclipse-temurin:17-jdk AS builder
 
-ENV JAVA_HOME=/opt/java/openjdk
-ENV PATH="$JAVA_HOME/bin:$PATH"
+# exemplo de script de build no Render
+sudo apt-get update
+sudo apt-get install -y openjdk-17-jdk
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+
+./gradlew build
 
 WORKDIR /app
 
