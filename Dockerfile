@@ -1,5 +1,8 @@
 FROM eclipse-temurin:17-jdk AS builder
 
+ENV JAVA_HOME=/opt/java/openjdk
+ENV PATH="$JAVA_HOME/bin:$PATH"
+
 WORKDIR /app
 
 COPY .mvn/ .mvn
