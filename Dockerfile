@@ -1,10 +1,13 @@
 FROM eclipse-temurin:17-jdk AS builder
 
 # Usa a imagem oficial OpenJDK 17 (versão leve)
-FROM openjdk:17-jdk-slim
+# Etapa 1: Build
+FROM maven:3.9.6-eclipse-temurin-17 AS builder
+
 
 # Define a variável de ambiente JAVA_HOME
-ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV JAVA_HOME=/usr/lib/jvm/
+java-17-openjdk-amd64
 ENV PATH="$JAVA_HOME/bin:$PATH"
 
 
